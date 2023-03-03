@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            Book Store App
+        </div>
+        
+    </header>
+    <div style="border: 1px solid white;"></div>
+    <div class="content">
+        Search For By Their Name
+        <div class="history" onclick="history()" id="history">
+            History
+        </div>
+    </div>
+    <div class="searchBox">
+        <div class="subBox">
+            <div class="search">
+                <i class="fa fa-search"></i>
+            </div>
+            <input type="text" placeholder="Search..." id="input">
+        </div>
+    </div>
+    <div class="searchBtn">
+        <button id="search-Btn" onclick="search()">Search Now!</button>
+    </div>
+
+    <div class="message" id="message">
+        Book Result for Harry Potter
+    </div>
+
+    <div class="resultBox" id="resultBox">
+        <!-- <div class="movie" id="movie">
+            <div class="img-Container">
+                <img src="http://books.google.com/books/content?id=7fQfEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" alt="">
+            </div>
+            <div class="info">
+                <p>Title : Daughter of the Deep</p>
+                <p>Author : Rick Riordan</p>
+                <p>Published Date : 2021-10-05</p>
+                <p>Average Rating : 4</p>
+                <p>Language : en</p>
+            </div>
+            <button id="buyNow">Buy Now</button>
+        </div> -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

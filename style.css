@@ -1,0 +1,194 @@
+body{
+    margin: 0px auto;
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    background-color: black;
+    height: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+
+    align-items: center;
+}
+
+.history{
+    margin-left: 50%;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: large;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+
+}
+
+.history:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.history:active{
+    font-size: 15px;
+    width: 95px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-size: x-small;
+
+}
+.head{
+    display: flex;
+    color: white;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+    
+}
+
+.searchBox{
+    /* border: 1px solid whitesmoke; */
+}
+
+.subBox{
+    margin: 0px auto;
+    display: flex;
+    border: 1px solid white;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
+
+.search{
+    margin: 1rem;
+    color: white;
+    font-size: large;
+}
+
+input{
+    border: none;
+    width: 95%;
+    height: 20px;
+    background-color: black;
+
+    font-size: larger;
+    color: white;
+}
+
+input:focus{
+    outline: none;
+}
+
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+
+    background-color: black;
+    color: white;
+    padding: 2%;
+}
+
+#search-Btn{
+    margin-left: 2.5%;
+    margin-top: 2rem;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+
+    font-size: 22px;
+    border-radius: 10px;
+}
+
+#search-Btn:hover{
+    cursor: pointer;
+    font-size: 22px;
+}
+
+
+#search-Btn:active{
+    width: 198px;
+    height: 49px;
+    font-size: 21px;
+}
+
+.message{
+    display: none;
+    width: fit-content;
+    /* border: 1px solid white; */
+    margin-left: 3%;
+    margin-top: 2%;
+
+    font-size: larger;
+}
+
+/* movie details */
+
+.resultBox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0px auto;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.movie{
+    width: 20%;
+    margin: 10px;
+
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+
+    border: 1px solid white;
+}
+
+.movie:hover{
+    cursor: pointer;
+    box-shadow: 0 0 11px rgb(255, 255, 255); 
+}
+img{
+    margin: 0px auto;
+    height: 100%;   
+    max-width: 100%;
+}
+
+.img-Container{
+    height: 400px;
+    text-align: center;
+    padding-top:0.5rem;
+}
+
+.info{
+    margin: 10px;
+    height: 300px;
+    padding: 1%;
+}
+
+#buyNow{
+    margin:0px auto;
+    
+    height: 3rem;
+    width: 100%;
+    color: black;
+    font-size: larger;
+
+    background-color: white;
+}
+
+#buyNow:hover{
+    cursor: pointer;
+}
