@@ -179,17 +179,6 @@
 
     }
 
-    // condition to visible History button in searh page 
-    if(localStorage.length > 0){
-        document.getElementById('history').style.display = "block";
-    }else{
-        document.getElementById('history').style.display = "none";
-    }
-
-    function history(){
-        window.location.href = "History";
-    }
-
 
     // condtion for searched result page 
     // if user has searched before on the next time it will be redirect to history page 
