@@ -45,3 +45,9 @@ function searchedHistory(e){
 
     window.location.href = window.location.origin +"/Searched";
 }
+
+if(localStorage.length == 0){
+    document.getElementById('newSearch').style.display = "block";
+}else{
+    document.getElementById('newSearch').style.display = "none";
+}

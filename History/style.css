@@ -46,7 +46,7 @@ button{
     width: 150px;
     height: 40px;
 
-    margin-left: 2%;
+    margin-left: 60%;
 }
 
 #clearSearch:hover{
@@ -62,11 +62,12 @@ button{
 }
 
 #newSearch{
+    display: none;
     background-color: white;
     width: 150px;
     height: 40px;
     
-    margin-left: 60%;
+    margin-left: 2%;
 }
 
 #newSearch:hover{

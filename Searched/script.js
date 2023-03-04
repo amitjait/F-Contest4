@@ -93,4 +93,6 @@ function createMovieHtml(data){
 
 }
 
+
+
 createSearched();
