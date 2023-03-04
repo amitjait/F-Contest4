@@ -1,37 +1,54 @@
+    
+    // main function to sarch and add searched results in currrent window and local staorage
     async function search(){
 
         let input = document.getElementById('input').value;
+
+        // check for input null 
 
         if(input == ""){
             alert("Enter valid name!");
             return;
         }
+
+        // getting API url from URL function for fetch data  
         let api = url();
         
+
+        // try and catch for error handling 
         try {
 
+            // fecthing data from API call 
             let response = await fetch(api);
 
+            // checking if status is false
             if(!response.ok){
                 console.log(response.ok);
                 throw `Status Code : ${response.status}`;
             }
 
+            // getting data object by response json
             let data = await response.json();
 
+            //  creating a date stamp for searched date 
+            // and addng this to current data for future use
             let date = dateTime();
 
             data["Date"] = date;
             data["Input"] = input;
-            console.log(data);
             
+
+            // now creating HTML for fecthed data in search page 
             createMovieHtml(data);
             
+            // adding a message box for search confirmation 
             let message = document.getElementById('message');
             message.innerHTML = `Book Result for ${input}`;
             message.style.display = "block";
 
-            localStorage.setItem(localStorage.length+1, JSON.stringify(data));
+            // adding data in localstorage with ID
+            let id = localStorage.length+1;
+            localStorage.setItem(id, JSON.stringify(data));
 
         } catch (error) {
             alert("Enter a valid name");
@@ -41,6 +58,8 @@
         
     }
 
+
+    // URL function to make URL for API fecthing 
     function url(){
         let input = document.getElementById('input').value;
 
@@ -49,12 +68,15 @@
             return;
         }
 
-        let searched = splitInput(input);
+
+        // merged input with "+" between multiple searched words 
+        let searched = mergedInput(input);
 
         return `https://www.googleapis.com/books/v1/volumes?q=${searched}`;
     }
 
-    function splitInput(input){
+    // merged input function  
+    function mergedInput(input){
         let inputMerged = "";
 
         let curr = "";
@@ -75,6 +97,7 @@
     }
 
 
+    //  Function to generate HTML content in search page after searching 
     function createMovieHtml(data){
 
         let books = data["items"];
@@ -103,14 +126,18 @@
             title.innerHTML = `Title : ${book['title']}`;
 
             let authors = document.createElement('p');
-            authors.innerHTML = "Author";
+            
 
+            let auth = "";
             book['authors'].map((author)=>{
-                author.innerHTML += `${author}`;
+                auth += `${author}, `;
             })
 
+            authors.innerHTML = "Author : "+auth;
+            console.log(auth);
+
             let pd = document.createElement('p');
-            pd.innerHTML = `${book['publishedDate']}`;
+            pd.innerHTML = `Published Date : ${book['publishedDate']}`;
 
             let rating = document.createElement('p');
             rating.innerHTML = `Average Rating : ${book['averageRating']}`;
@@ -134,7 +161,7 @@
 
     }
 
-
+// date and time function to create Date stamp
     function dateTime(){
         let d = new Date();
         let date = "Searched On: ";
@@ -152,6 +179,7 @@
 
     }
 
+    // condition to visible History button in searh page 
     if(localStorage.length > 0){
         document.getElementById('history').style.display = "block";
     }else{
@@ -163,6 +191,9 @@
     }
 
 
+    // condtion for searched result page 
+    // if user has searched before on the next time it will be redirect to history page 
     if(localStorage.length > 0){
         window.location.href = "History";
     }
+

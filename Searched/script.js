@@ -58,14 +58,18 @@ function createMovieHtml(data){
         title.innerHTML = `Title : ${book['title']}`;
 
         let authors = document.createElement('p');
-        authors.innerHTML = "Author";
+        
 
+        let auth = "";
         book['authors'].map((author)=>{
-            author.innerHTML += `${author}`;
+            auth += `${author}, `;
         })
 
+        authors.innerHTML = "Author : "+auth;
+        console.log(auth);
+
         let pd = document.createElement('p');
-        pd.innerHTML = `${book['publishedDate']}`;
+        pd.innerHTML = `Published Date : ${book['publishedDate']}`;
 
         let rating = document.createElement('p');
         rating.innerHTML = `Average Rating : ${book['averageRating']}`;
