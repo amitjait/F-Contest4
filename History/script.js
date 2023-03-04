@@ -1,4 +1,5 @@
 
+// function to create HTML in history page after fetching data from local storage
 function createHistory(){
     let searches = document.getElementById('searched');
 
@@ -15,12 +16,12 @@ function createHistory(){
 
         let dateTime = document.createElement('div');
         dateTime.setAttribute('class', 'dateTime');
-
         dateTime.innerHTML = book["Date"];
 
         search.append(inp, dateTime);
         search.setAttribute('id', i);
 
+        // adding onclick functioin to history block
         search.onclick = searchedHistory;
 
         searches.appendChild(search);
@@ -30,14 +31,18 @@ function createHistory(){
 
 createHistory();
 
+// funnction to go back origin page after clearing the history
 function newSearch(){
     window.location.href = window.location.origin;
 }
 
+//  clear search history function
 function clearSearch(){
     localStorage.clear();
     window.location.href = window.location.href;
 }
+
+// funcction to go for searched page
 
 function searchedHistory(e){
 
@@ -46,8 +51,13 @@ function searchedHistory(e){
     window.location.href = window.location.origin +"/Searched";
 }
 
+
+// condition for displaying New Search and Clear search buttn
+
 if(localStorage.length == 0){
     document.getElementById('newSearch').style.display = "block";
+    document.getElementById('clearSearch').style.display = "none";
 }else{
     document.getElementById('newSearch').style.display = "none";
+    document.getElementById('clearSearch').style.display = "block";
 }

@@ -1,12 +1,14 @@
 
+// function to create HTML in searched page after fecthing data from local stoarge by currID
 function createSearched(){
     let data = JSON.parse(localStorage.getItem(localStorage.getItem("currId")));
-    console.log(data);
+    // console.log(data);
     currentSearch(data, localStorage.getItem("currId"));
 
     createMovieHtml(data);
 }
 
+// function to crerate search history block
 function currentSearch(book, currID){
     let searches = document.getElementById('searched');
 
@@ -30,6 +32,8 @@ function currentSearch(book, currID){
     searches.appendChild(search);
 }
 
+
+// function to create HTML searched page 
 function createMovieHtml(data){
 
     let books = data["items"];
